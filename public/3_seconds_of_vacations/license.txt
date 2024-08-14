@@ -1,0 +1,11 @@
+Model Information:
+* title:	3 seconds of vacations
+* source:	https://sketchfab.com/3d-models/3-seconds-of-vacations-a5b47f042b854aa887523e49af8ee8d8
+* author:	JonhGillessen (https://sketchfab.com/JonhGillessen)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "3 seconds of vacations" (https://sketchfab.com/3d-models/3-seconds-of-vacations-a5b47f042b854aa887523e49af8ee8d8) by JonhGillessen (https://sketchfab.com/JonhGillessen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

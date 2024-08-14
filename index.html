@@ -1,13 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; }
-		</style>
+		<link rel="stylesheet" href="styles.css">
+		<script src="index.js"></script>
+		<script src="https://kit.fontawesome.com/524719cdfa.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<script type="text/javascript">
+			(function () {
+				emailjs.init("kXO2GUU8lkGiiTFaV");
+			})();
+		</script>
 	</head>
 	<body>
+		<section id="landing-page" onmousemove="moveBackground(event)">
+			<nav>
+				<figure>
+					<img class="logo" src="./assets/NC.svg" alt="Logo">
+				</figure>
+				<ul class="nav__link--list ">
+					<li class="nav__link click">
+						<a href="#" class="nav__link--anchor
+						link__hover-effect
+						link__hover-effect--black
+						"> About </a>
+					</li>
+					<li class="nav__link click">
+						<a href="#projects" class="nav__link--anchor
+						link__hover-effect
+						link__hover-effect--black
+						"> Projects </a>
+					</li>
+					<li onclick="toggleModal()" class="click nav__link">
+						<a  href="#" class="nav__link--anchor
+						link__hover-effect
+						link__hover-effect--black
+						"> Contact </a>
+					</li>
+					<li class="nav__link click" onclick="toggleContrast()" >
+						<a href="#" class=" nav__link--anchor
+						link__hover-effect
+						link__hover-effect--black
+						">  
+						<i class="fas fa-adjust" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<header>
+				<h1 class="title">
+					Hello
+				</h1>
+				<h1 class="title light-blue"> I'm Noah. </h1>
+				<p class="header__para">
+					I'm a <span class="header__span--bold light-blue">Frontend Software Engineer </span> with a strong passion for building web applications with great user experiences in mind.
+				   
+				</p>
+				<div class="social__list">
+					<a href="https://www.linkedin.com/in/noah-c-47046795/" target="_blank" class="social__link click">
+						<i class="fab fa-linkedin-in" aria-hidden="true"></i>
+					</a>
+					<a href="https://github.com/N-Cress" target="_blank" class="social__link click">
+						<i class="fab fa-github" aria-hidden="true"></i>
+					</a>
+					<a href="../assets/RESUME.pdf" target="_blank" class="social__link click">
+						<i class="fas fa-file-pdf" aria-hidden="true"></i>
+					</a>
+				</div>
+			</header>
+			<a href="#">
+				<button class="mail__btn click" onclick="toggleModal()"> 
+					<i class="fas fa-envelope" aria-hidden="true"></i>
+				</button>
+			</a>
+			<a href="#projects" class="scroll">
+				<div class="scroll__icon click"></div>
+			</a>
+			<div class="modal">
+				<div class="modal__half modal__about">
+					<h3 class="modal__title modal__title--about"> Hi! I'm Noah Cress. </h3>
+					<h4 class="modal__sub-title modal__subtitle--about">  </h4>
+					<p class="modal__para">
+						Enthusiatic learner that is looking to broaden his knowledge and acquire new skills. My most recent position was with
+						<span class="light-blue"> Adcomp Systems</span> as a <span class="light-blue">Technical Support Representative</span>,
+						 troubleshooting outstanding problems and communicating with our clientele daily to keep everything working well. 
+					</p>
+					<div class="modal__languages">
+						<figure class="modal__language">
+							<img class="modal__language--img"
+							  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+							  alt="">
+							<span class="language__name">HTML</span>
+						  </figure>
+						  <figure class="modal__language">
+							<img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+							  alt="">
+							<span class="language__name">CSS</span>
+						  </figure>
+						  <figure class="modal__language">
+							<img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+							  alt="">
+							<span class="language__name">JavaScript</span>
+						  </figure>
+					</div>
+				</div>
+				<div class="modal__half modal__contact">
+					<i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+					<h3 class="modal__title modal__title--contact"> Let's talk! </h3>
+					<h3 class="modal__sub-title modal__sub-title--contact">
+						Excited to explore new opportunities and find new avenues for growth.
+					</h3>
+					<form id="contact__form" onsubmit="contact(event)">
+						<div class="form__item">
+							<label class="form__item--label"> Name </label>
+							<input type="text" class="input" name="user_name" required> </input>
+						</div>
+						<div class="form__item">
+							<label class="form__item--label"> Email </label>
+							<input type="email" class="input" name="user_email" required> </input>
+						</div>
+						<div class="form__item">
+							<label class="form__item--label"> Message </label>
+							<textarea type="text" class="input" name="message" required> </textarea>
+						</div>
+						<button id="contact__submit" class="form__submit">
+							Submit
+						</button>
+					</form>
+					<div class="modal__overlay modal__overlay--loading">
+						<i class="fas fa-spinner"></i>
+					  </div>
+					  <div class="modal__overlay modal__overlay--success">
+						Thanks for the message! Looking forward to speaking to you soon.
+					  </div>
+				</div>
+			</div>
+			<img src="./assets/semi circle.svg" class="shape shape--0" style="transform: translate(67px, 25.3px) rotate(670deg);">
+			<img src="./assets/circle.svg" class="shape shape--1" style="transform: translate(-67px, -25.3px) rotate(-670deg);">
+			<img src="./assets/squiggly.svg" class="shape shape--2" style="transform: translate(67px, 25.3px) rotate(670deg);">
+			<img src="./assets/circle.svg" class="shape shape--3" style="transform: translate(-67px, -25.3px) rotate(-670deg);">
+			<img src="./assets/triangle.svg" class="shape shape--4" style="transform: translate(67px, 25.3px) rotate(670deg);">
+			<img src="./assets/circle.svg" class="shape shape--5" style="transform: translate(-67px, -25.3px) rotate(-670deg);">
+			<img src="./assets/squiggly.svg" class="shape shape--6" style="transform: translate(67px, 25.3px) rotate(670deg);">
+			<img src="./assets/circle.svg" class="shape shape--7" style="transform: translate(-67px, -25.3px) rotate(-670deg);">
+			<img src="./assets/semi circle.svg" class="shape shape--8" style="transform: translate(67px, 25.3px) rotate(670deg);">
+		</section>
+		<section id="projects">
+			<div class="container">
+				<div class="row">
+					<h1 class="section__title">
+						Here are some of my <span class="light-blue"> projects </span>
+					</h1>
+					<ul class="project__list">
+						<li class="project">
+							<div class="project__wrapper">
+								<img src="assets/independentMovieApiFullScreen.png" alt="" class="project__img">
+								<div class="project__wrapper--bg"></div>
+								<div class="project__description">
+									<h3 class="project__description--title"> Movie API Search </h3>
+									<h4 class="project__description--sub-title"> Html, CSS, JavaScript, React, Axios </h4>
+									<p class="project__description--para">
+										Search page that uses results from OMDB's API to display movie results based on inputed query, which can then be sorted from oldest to newest. Each result can be clicked on for further information also pulled from OMDB
+									</p>
+									<div class="project__description--links">
+										<a href="https://week6-reactfinal-movieapi.vercel.app/">
+											<i class="fas fa-link" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="project">
+							<div class="project__wrapper">
+								<img src="assets/netflixCloneFullScreen.png" alt="" class="project__img">
+								<div class="project__wrapper--bg"></div>
+								<div class="project__description">
+									<h3 class="project__description--title"> Netflix Clone </h3>
+									<h4 class="project__description--sub-title"> Html, Tailwind, JavaScript, React, Axios, Firebase </h4>
+									<p class="project__description--para">
+										Uses TMDB's API to iterate through results to display in a fashion meant to mimick Netflix's homepage. Has sign in and sign up pages that uses Firebase for authentication.
+									</p>
+									<div class="project__description--links">
+										<a target="_blank" href="https://flix-clone-snowy.vercel.app/">
+											<i class="fas fa-link" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="project">
+							<div class="project__wrapper">
+								<img src="assets/ytCloneFullScreen.png" alt="" class="project__img">
+								<div class="project__wrapper--bg"></div>
+								<div class="project__description">
+									<h3 class="project__description--title"> Youtube Homepage Clone </h3>
+									<h4 class="project__description--sub-title"> Html, CSS, JavaScript, Typescript, React, Vite </h4>
+									<p class="project__description--para">
+										Mimicks the layout that is used for the Youtube landing page. Includes a scrolling top bar and side menu that can be collapsed.
+									</p>
+									<div class="project__description--links">
+										<a target="_blank" href="https://n-cress.github.io/ytclone/ ">
+											<i class="fas fa-link" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row footer__row">
+					<a href="">
+						<figure>
+							<img src="./assets/NC.svg" alt="Logo" class="footer__logo">
+						</figure>
+						<span class="footer__logo--popper">
+							" Top "
+							<i class="fas fa-arrow-up" aria-hidden="true"></i>
+						</span>
+					</a>
+					<ul class="footer__list">
+						<li class="footer__list-item">
+							<a class="footer__list-anchor" target="_blank" target="_blank" href="https://github.com/N-Cress">Github</a>
+						</li>
+						<li class="footer__list-item">
+							<a class="footer__list-anchor" target="_blank" href="www.linkedin.com/in/noah-c-47046795">Linkedin</a>
+						</li>
+						<li class="footer__list-item">
+							<a  class="footer__list-anchor" href="mailto:kelour1227@gmail.com">Contact</a>
+						</li>
+						<li class="footer__list-item">
+							<a class="footer__list-anchor" target="_blank" href="../assets/RESUME.pdf">Resume</a>
+						</li>
+					</ul>
+					<div class="footer__copyright"> Copyright © 2021 Noah Cress </div>
+				</div>
+			</div>
+		</footer>
 		<script type="module" src="/main.js"></script>
 	</body>
 </html>

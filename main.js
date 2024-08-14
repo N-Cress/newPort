@@ -23,9 +23,7 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     model.scale.set(2, 2, 2);
     pivot.add(model); // Add the model to the pivot
     mixer = new THREE.AnimationMixer(model);
-    console.log(mixer);
     const animation = gltf.animations; // Array<THREE.AnimationClip>
-    console.log(animation);
     const clip = THREE.AnimationClip.findByName(animation, 'Take 01');
     const action = mixer.clipAction(clip);
     action.play();
@@ -44,7 +42,6 @@ renderer.setAnimationLoop(animate);
 const clock = new THREE.Clock();
 
 function animate() {
-	console.log(camera.position)
     if (mixer) {
         mixer.update(clock.getDelta());
     }
@@ -82,3 +79,4 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
+

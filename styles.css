@@ -34,7 +34,7 @@ nav {
 }
 
 canvas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
@@ -665,7 +665,7 @@ header {
   color: white;
 }
 .dark-theme section {
-  background-color: #242424;
+  background-color: #000000;
   z-index: 0;
 }
 .dark-theme #personal-logo {

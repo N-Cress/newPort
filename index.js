@@ -28,6 +28,8 @@ function toggleContrast() {
     }
 }
 
+document.getElementById('contrastToggle').addEventListener('click', toggleContrast);
+
 function toggleModal() {
     if (isModalActive) {
       isModalActive = false;

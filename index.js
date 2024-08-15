@@ -18,6 +18,8 @@ function moveBackground(event) {
     }
 }
 
+document.getElementById('landing-page').addEventListener('mousemove', moveBackground);
+
 function toggleContrast() {
     darkMode = !darkMode;
     if (darkMode) {
@@ -29,6 +31,8 @@ function toggleContrast() {
 }
 
 document.getElementById('contrastToggle').addEventListener('click', toggleContrast);
+
+
 
 function toggleModal() {
     if (isModalActive) {
@@ -64,3 +68,6 @@ function contact(event) {
         );
       });
 }
+
+
+document.getElementById('toggleModal').addEventListener('click', toggleModal);

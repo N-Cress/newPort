@@ -45,6 +45,7 @@ function toggleModal() {
 
 document.getElementById('modalToggle').addEventListener('click', toggleModal); 
 document.getElementById('toggleModal').addEventListener('click', toggleModal);
+document.getElementById('toggleModal-X').addEventListener('click', toggleModal);
 
 function contact(event) {
     event.preventDefault();

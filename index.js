@@ -43,6 +43,9 @@ function toggleModal() {
     document.body.classList += " modal--active";
   }
 
+document.getElementById('modalToggle').addEventListener('click', toggleModal); 
+document.getElementById('toggleModal').addEventListener('click', toggleModal);
+
 function contact(event) {
     event.preventDefault();
     const loading = document.querySelector(".modal__overlay--loading");
@@ -68,6 +71,3 @@ function contact(event) {
         );
       });
 }
-
-
-document.getElementById('toggleModal').addEventListener('click', toggleModal);

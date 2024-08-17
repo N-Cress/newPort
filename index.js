@@ -72,3 +72,5 @@ function contact(event) {
         );
       });
 }
+
+document.getElementById("contact__form").addEventListener("submit", contact)

@@ -522,8 +522,14 @@ header {
 
 /* PROJECTS */
 
-#projects {
-    
+.project-links {
+    display: flex;
+    align-items: center;
+}
+
+.project-github {
+    margin-left: 8px;
+    font-size: 24px;
 }
 
 .section__title {
@@ -598,8 +604,14 @@ header {
     transition: all 450ms ease;
 }
 
+
+
 .project__wrapper:hover .project__wrapper--bg {
     opacity: 0.7;
+    visibility: visible;
+}
+
+.project__wrapper:hover .project_links {
     visibility: visible;
 }
 

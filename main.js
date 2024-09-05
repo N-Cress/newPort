@@ -77,9 +77,9 @@ function modifyModelMaterials(model) {
 
 // Handle window resize
 window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerWidth;
+    camera.aspect = window.innerWidth;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth);
 });
 
 function toggleContrast() {

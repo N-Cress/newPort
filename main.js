@@ -77,16 +77,16 @@ function modifyModelMaterials(model) {
 
 // Handle window resize
 window.addEventListener('resize', () => {
-    const width = window.innerWidth;
+    const height = window.innerHeight;
 
     // Adjust camera's aspect ratio and renderer size
-    camera.aspect = width / window.innerHeight;
+    camera.aspect = window.innerWidth / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(width, window.innerHeight);
+    renderer.setSize(window.innerWidth, height);
 
     // Adjust the camera position to maintain centering
-    camera.position.x = (camera.position.x / renderer.domElement.clientWidth) * width;
-    camera.position.z = (camera.position.z / renderer.domElement.clientWidth) * width;
+    camera.position.x = (camera.position.x / renderer.domElement.clientWidth);
+    camera.position.z = (camera.position.z / renderer.domElement.clientWidth);
 
     // Ensure the camera is looking at the scene's center
     camera.lookAt(new THREE.Vector3(0, 0, 0));

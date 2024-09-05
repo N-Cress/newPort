@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
 let darkMode = false;
 
 const loader = new GLTFLoader();
@@ -77,17 +78,27 @@ function modifyModelMaterials(model) {
 
 // Handle window resize
 window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height);
+
+    // Adjust the camera position to keep the scene centered
+    camera.position.z = (height / width) * camera.position.z;
+    camera.position.x = camera.position.x * (width / window.innerWidth);
+    camera.position.y = camera.position.y * (height / window.innerHeight);
+
+    // Ensure the camera is looking at the scene's center
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
 });
 
 function toggleContrast() {
     darkMode = !darkMode;
     if (darkMode) {
         scene.background = new THREE.Color(0x000);
-    }
-    else {
+    } else {
         scene.background = new THREE.Color("rgb(255, 255, 255)");
     }
 }

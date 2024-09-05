@@ -7,12 +7,13 @@ const loader = new GLTFLoader();
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1500);
 const light = new THREE.AmbientLight(0x404040, 4); // soft white light
+const height = 994;
 scene.add(light);
 
 scene.background = new THREE.Color("rgb(255, 255, 255)");
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth, height);
 document.body.appendChild(renderer.domElement);
 
 let mixer;
@@ -77,9 +78,9 @@ function modifyModelMaterials(model) {
 
 // Handle window resize
 window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = window.innerWidth / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, height);
 });
 
 function toggleContrast() {

@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
 let darkMode = false;
 
 const loader = new GLTFLoader();
@@ -26,6 +25,7 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     pivot.add(model); // Add the model to the pivot
 
     // Set the model's or pivot's position to move it from the center
+    // Example: Move the model to the right and slightly up
     model.position.set(-9, -2, -9); // Adjust these values as needed
     
     mixer = new THREE.AnimationMixer(model);
@@ -77,26 +77,17 @@ function modifyModelMaterials(model) {
 
 // Handle window resize
 window.addEventListener('resize', () => {
-    const height = window.innerHeight;
-
-    // Adjust camera's aspect ratio and renderer size
-    camera.aspect = window.innerWidth / height;
+    camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, height);
-
-    // Adjust the camera position to maintain centering
-    camera.position.x = (camera.position.x / renderer.domElement.clientWidth);
-    camera.position.z = (camera.position.z / renderer.domElement.clientWidth);
-
-    // Ensure the camera is looking at the scene's center
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
 function toggleContrast() {
     darkMode = !darkMode;
     if (darkMode) {
         scene.background = new THREE.Color(0x000);
-    } else {
+    }
+    else {
         scene.background = new THREE.Color("rgb(255, 255, 255)");
     }
 }

@@ -778,6 +778,9 @@ header {
     .project-links {
         justify-content: center;
     }
+    .footer__list-item{
+        padding: 0 6px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -788,6 +791,7 @@ header {
 
     .header__para {
         font-size: 14px;
+        padding-right: 10px;
     }
     .project__description--para {
         display: none;

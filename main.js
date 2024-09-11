@@ -56,7 +56,7 @@ function animate() {
 
 function adjustCameraPosition() {
     if (window.innerWidth < 800) {
-        camera.position.set(-4, -4, -10); // Adjusted camera position for small screens
+        camera.position.set(6, 6, -10); // Adjusted camera position for small screens
     } else {
         camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
     }
@@ -93,7 +93,13 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-
+    // Adjust camera position based on window width
+    if (window.innerWidth < 800) {
+        camera.position.set(-12, 2, -10); // Adjusted camera position for small screens
+    } else {
+        camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
+    }
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
 });
 
 function toggleContrast() {

@@ -82,7 +82,7 @@ window.addEventListener('resize', () => {
 
     // Adjust camera position based on window width
     if (window.innerWidth < 800) {
-        camera.position.set(2, 2, -10); // Adjusted camera position for small screens
+        camera.position.set(12, 2, -10); // Adjusted camera position for small screens
     } else {
         camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
     }

@@ -56,7 +56,7 @@ function animate() {
 
 function adjustCameraPosition() {
     if (window.innerWidth < 800) {
-        camera.position.set(10, 2, -60); // Adjusted camera position for small screens
+        camera.position.set(10, 12, -60); // Adjusted camera position for small screens
     } else {
         camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
     }

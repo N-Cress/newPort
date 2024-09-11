@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
 let darkMode = false;
 
 const loader = new GLTFLoader();
-
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1500);
 const light = new THREE.AmbientLight(0x404040, 4); // soft white light
@@ -25,7 +25,6 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     pivot.add(model); // Add the model to the pivot
 
     // Set the model's or pivot's position to move it from the center
-    // Example: Move the model to the right and slightly up
     model.position.set(-9, -2, -9); // Adjust these values as needed
     
     mixer = new THREE.AnimationMixer(model);
@@ -39,7 +38,7 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     console.error(error);
 });
 
-// Set the camera's initial position and look at the model
+// Initial camera position
 camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916);
 camera.lookAt(new THREE.Vector3(0, 0, 0)); // Adjust this to point at the center of the pivot or model
 
@@ -75,11 +74,19 @@ function modifyModelMaterials(model) {
     });
 }
 
-// Handle window resize
+// Handle window resize and adjust camera position
 window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+
+    // Adjust camera position based on window width
+    if (window.innerWidth < 800) {
+        camera.position.set(2, 2, -10); // Adjusted camera position for small screens
+    } else {
+        camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
+    }
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
 });
 
 function toggleContrast() {

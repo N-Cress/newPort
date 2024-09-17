@@ -54,15 +54,6 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-function adjustCameraPosition() {
-    if (window.innerWidth < 800) {
-        camera.position.set(-20, 22, -55); // Adjusted camera position for small screens
-    } else {
-        camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
-    }
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
-}
-
 // Initial camera setup
 adjustCameraPosition(); // Call this function to set the camera initially
 
@@ -89,10 +80,6 @@ function modifyModelMaterials(model) {
 
 // Handle window resize and adjust camera position
 window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
     // Adjust camera position based on window width
     if (window.innerWidth < 800) {
         camera.position.set(-12, 2, -10); // Adjusted camera position for small screens

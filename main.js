@@ -43,7 +43,7 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
 if (window.innerWidth < 800) {
     camera.position.set(-27, 20, -47); // Adjusted camera position for small screens
 } else {
-    camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
+    camera.position.set(5.287782524309437, 5.504097628621107, -23.815485509136916); // Default camera position
 }
 
 camera.lookAt(new THREE.Vector3(0, 0, 0));

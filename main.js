@@ -39,7 +39,13 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
 });
 
 // Initial camera position
-camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916);
+if (window.innerWidth < 800) {
+    camera.position.set(-12, 2, -10); // Adjusted camera position for small screens
+} else {
+    camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
+}
+
+camera.lookAt(new THREE.Vector3(0, 0, 0));
 camera.lookAt(new THREE.Vector3(0, 0, 0)); // Adjust this to point at the center of the pivot or model
 
 renderer.setAnimationLoop(animate);

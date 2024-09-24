@@ -22,6 +22,10 @@ scene.add(pivot); // Add the pivot to the scene
 loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     const model = gltf.scene;
 
+    
+    model.scale.set(2, 2, 2);
+    pivot.add(model); // Add the model to the pivot
+    
     if (window.innerWidth < 800) {
         model.position.set(-9, 18, -9)
         camera.position.set(-22, 20, -42); // Adjusted camera position for small screens
@@ -29,10 +33,6 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
         model.position.set(-9, -2, -9)
         camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
     }
-    
-    model.scale.set(2, 2, 2);
-    pivot.add(model); // Add the model to the pivot
-
     
     mixer = new THREE.AnimationMixer(model);
     const animation = gltf.animations; // Array<THREE.AnimationClip>

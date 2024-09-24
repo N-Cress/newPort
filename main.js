@@ -30,7 +30,7 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
         model.position.set(-13, -12, -13);
     }
     else if (window.innerWidth < 500) {
-        model.position.set(-9, 24, -9); // Adjust these values as needed
+        model.position.set(-9, 16, -9); // Adjust these values as needed
     } else {
         model.position.set(-900, 0, -9); // Adjust these values as needed
     }

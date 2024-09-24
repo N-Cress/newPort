@@ -40,7 +40,7 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
 
 // Initial camera position
 if (window.innerWidth < 800) {
-    camera.position.set(-14, 2, -22); // Adjusted camera position for small screens
+    camera.position.set(-14, 2, -42); // Adjusted camera position for small screens
 } else {
     camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
 }

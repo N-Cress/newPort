@@ -21,6 +21,15 @@ scene.add(pivot); // Add the pivot to the scene
 
 loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     const model = gltf.scene;
+
+    if (window.innerWidth < 800) {
+        model.position.set(-9, 8, -9)
+        camera.position.set(-22, 20, -42); // Adjusted camera position for small screens
+    } else {
+        model.position.set(-9, -2, -9)
+        camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
+    }
+    
     model.scale.set(2, 2, 2);
     pivot.add(model); // Add the model to the pivot
 
@@ -37,13 +46,6 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
 }, undefined, function (error) {
     console.error(error);
 });
-
-// Initial camera position
-if (window.innerWidth < 800) {
-    camera.position.set(-22, 20, -42); // Adjusted camera position for small screens
-} else {
-    camera.position.set(5.287782524309437, 3.504097628621107, -23.815485509136916); // Default camera position
-}
 
 camera.lookAt(new THREE.Vector3(0, 0, 0));
 camera.lookAt(new THREE.Vector3(0, 0, 0)); // Adjust this to point at the center of the pivot or model

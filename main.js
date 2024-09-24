@@ -23,7 +23,7 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     const model = gltf.scene;
 
     if (window.innerWidth < 800) {
-        model.position.set(-9, 8, -9)
+        model.position.set(-9, 18, -9)
         camera.position.set(-22, 20, -42); // Adjusted camera position for small screens
     } else {
         model.position.set(-9, -2, -9)

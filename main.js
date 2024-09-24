@@ -20,7 +20,7 @@ let pivot = new THREE.Object3D(); // Create a pivot object
 scene.add(pivot); // Add the pivot to the scene
 
 loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
-    const model = gltf.scene;
+    var model = gltf.scene;
     
     model.scale.set(2, 2, 2);
     pivot.add(model); // Add the model to the pivot

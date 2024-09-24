@@ -35,6 +35,7 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
         model.position.set(-900, 0, -9); // Adjust these values as needed
     }
     
+   / /
 
     
     mixer = new THREE.AnimationMixer(model);

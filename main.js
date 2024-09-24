@@ -97,6 +97,14 @@ function modifyModelMaterials(model) {
 
 // Handle window resize and adjust camera position
 window.addEventListener('resize', () => {
+    if (window.innerWidth < 500) {
+        model.position.set(-9, 0, -9); // Adjust these values as needed
+    }
+    else if (window.innerWidth < 600) {
+        model.position.set(-13, -12, -13);
+    } else {
+        model.position.set(-9, -2, -9); // Adjust these values as needed
+    }
     // Adjust camera position based on window width
     if (window.innerWidth > 800) {
         camera.position.set(-12, 2, -10); // Adjusted camera position for small screens

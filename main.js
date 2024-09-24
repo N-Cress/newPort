@@ -26,7 +26,13 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     pivot.add(model); // Add the model to the pivot
 
     // Set the model's or pivot's position to move it from the center
-    model.position.set(-9, 0, -9); // Adjust these values as needed
+    if (window.innerWidth < 800) {
+        model.position.set(-9, 0, -9); // Adjust these values as needed
+    } else {
+        model.position.set(-900, 0, -9); // Adjust these values as needed
+    }
+    
+    // model.position.set(-9, 0, -9); // Adjust these values as needed
     
     mixer = new THREE.AnimationMixer(model);
     const animation = gltf.animations; // Array<THREE.AnimationClip>

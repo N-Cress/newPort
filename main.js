@@ -26,7 +26,10 @@ loader.load('./3_seconds_of_vacations/scene.gltf', function (gltf) {
     pivot.add(model); // Add the model to the pivot
 
     // Set the model's or pivot's position to move it from the center
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 600) {
+        model.position.set(-9, -4, -9)
+    }
+    else if (window.innerWidth < 500) {
         model.position.set(-9, 0, -9); // Adjust these values as needed
     } else {
         model.position.set(-900, 0, -9); // Adjust these values as needed

@@ -28,6 +28,7 @@ function toggleContrast() {
     else {
         document.body.classList.remove("dark-theme");
     }
+    console.log("hi")
 }
 
 document.getElementById('contrastToggle').addEventListener('click', toggleContrast);

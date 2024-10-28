@@ -54,9 +54,6 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-// Initial camera setup
-adjustCameraPosition(); // Call this function to set the camera initially
-
 
 function modifyModelMaterials(model) {
     model.traverse((child) => {

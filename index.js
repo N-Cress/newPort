@@ -42,6 +42,7 @@ function toggleModal() {
     }
     isModalActive = true;
     document.body.classList += " modal--active";
+    console.log("hi")
   }
 
 document.getElementById('modalToggle').addEventListener('click', toggleModal); 

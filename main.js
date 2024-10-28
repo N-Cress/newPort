@@ -97,6 +97,7 @@ function toggleContrast() {
     else {
         scene.background = new THREE.Color("rgb(255, 255, 255)");
     }
+    console.log("hi")
 }
 
 document.getElementById('contrastToggle').addEventListener('click', toggleContrast);
